@@ -1,1 +1,1 @@
-# Trinrtix
+# Trinetix
