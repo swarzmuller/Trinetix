@@ -1,0 +1,162 @@
+@include rm(320) {
+  body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .wrapper {
+    flex: 1 0;
+  }
+
+  .footer {
+    flex: 0 0 ;
+    background: #00172b;
+    border-top: 4px solid #00abff;
+
+    &__contacts {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 35px 0;
+    }
+
+    &__item {
+      &:first-child {
+        width: 100%;
+        margin-bottom: 28px;
+      }
+
+      &:not(:last-child) {
+        margin-right: 27px;
+      }
+    }
+
+    &__text {
+      font-family: 'DecimaNovaProLt';
+      font-size: 16px;
+      color: #ffffff;
+
+      &:not(:last-child) {
+        margin-bottom: 11px;
+      }
+    }
+
+    &__link {
+      color: #00abff;
+      font-size: 16px;
+    }
+
+    &__tel {
+      font-size: 16px;
+    }
+
+    &__social {
+      padding: 35px 0;
+      border-top: 1px solid #00203c;
+    }
+  }
+
+  .social {
+    display: flex;
+    flex-direction: column;
+
+    &__icons {
+      display: flex;
+      margin-bottom: 20px;
+    }
+
+    &__copyright {
+      font-family: 'DecimaNovaProLt';
+      font-size: 16px;
+      color: #ffffff;
+    }
+  }
+
+  .icon {
+    display: block;
+    font-family: "social";
+    color: #ffffff;
+    font-size: 30px;
+    transition: .3s;
+
+    &:hover {
+      color: #00abff;
+    }
+
+    &:not(:last-child) {
+      margin-right: 17px;
+    }
+  }
+
+  .footer-menu {
+    display: none;
+
+    &__item {
+      &:not(:last-child) {
+        margin-right: 25px;
+      }
+    }
+
+    &__link {
+      font-family: 'DecimaNovaProLt';
+      font-size: 16px;
+      color: #ffffff;
+      transition: .3s;
+
+      &:hover {
+        color: #00abff;
+      }
+    }
+  }
+}
+
+@include rm(980) {
+  .footer {
+    &__link {
+      font-size: 18px;
+    }
+
+    &__tel {
+      font-size: 18px;
+    }
+  }
+
+  .social {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    &__icons {
+      order: 2;
+      margin-bottom: 0;
+    }
+  }
+
+  .footer__item {
+    &:first-child {
+      width: auto;
+      margin-bottom: 0;
+    }
+
+    &:last-child {
+      margin-left: 66px;
+    }
+  }
+
+  .footer-menu {
+    display: flex;
+    order: 1;
+  }
+}
+
+@include rm(1600) {
+  .footer__item {
+    &:not(:last-child) {
+      margin-right: 90px;
+    }
+
+    &:last-child {
+      margin-left: 90px;
+    }
+  }
+}

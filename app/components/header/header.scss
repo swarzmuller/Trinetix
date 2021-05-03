@@ -1,0 +1,173 @@
+@include rm(320) {
+  .header {
+    border-top: 4px solid #00abff;
+    border-bottom: 1px solid #00203c;
+    background: #00172b;
+    padding: 15px 0;
+
+    &__logo {
+      display: block;
+    }
+  }
+
+  .menu {
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 5;
+    height: 100vh;
+    padding: 30px 20px;
+    transform: translateX(180px);
+    background: #7b8184;
+    transition: .3s;
+
+    &__item {
+      margin: 0 0 40px;
+    }
+
+    &__link {
+      font-family: 'DecimaNovaPro-Bold';
+      text-transform: uppercase;
+      color: #ffffff;
+      transition: .3s;
+
+      &:hover {
+        color: #00abff;
+      }
+    }
+
+    &__contact-us {
+      padding: 6px 19px;
+      border: 1px solid #ffffff;
+      border-radius: 15px;
+
+      &:hover {
+        background: #ffffff;
+      }
+    }
+
+    &__close {
+      position: absolute;
+      top: 8px;
+      left: -25px;
+      width: 25px;
+      height: 25px;
+      padding: 0;
+      background: none;
+
+      &:before,
+      &:after {
+        display: block;
+        height: 1px;
+        width: 100%;
+        background: #ffffff;
+        transform: rotate(45deg);
+        margin-top: -1px;
+        content: '';
+      }
+
+      &:after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  .menu.active {
+      transform: translateX(0);
+  }
+
+  .overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 4;
+    width: 0;
+    height: 100vh;
+    background: #808080a6;
+    transition: .3s;
+  }
+
+  .overlay.active {
+    width: 100%;
+  }
+
+  .hamburger {
+    position: absolute;
+    right: 15px;
+    top: 0;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    background: 0;
+
+    &__line {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: #ffffff;
+
+      &:not(:last-child) {
+        margin-bottom: 8px;
+      }
+    }
+  }
+
+  .title {
+    background: #00172b;
+    display: none;
+
+    &__text {
+      font-size: 48px;
+      line-height: 55px;
+      color: #ffffff;
+      padding: 60px 0;
+    }
+  }
+}
+
+@include rm(980) {
+  .header {
+    &__wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+   }
+
+  .menu {
+    position: static;
+    height: auto;
+    padding: 0;
+    background: none;
+    transform: none;
+
+    &__list {
+      display: flex;
+      align-items: center;
+    }
+
+    &__item {
+      margin: 0;
+
+      &:not(:last-child) {
+          margin-right: 44px;
+      }
+    }
+
+    &__close {
+      display: none;
+    }
+  }
+
+  .overlay.active {
+    width: 0;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .title {
+    display: block;
+  }
+}
